@@ -1,0 +1,46 @@
+{
+    "collectionName": "payments",
+    "info": {
+      "singularName": "payment",
+      "pluralName": "payments",
+      "displayName": "Payment",
+      "description": ""
+    },
+    "options": {
+      "draftAndPublish": false
+    },
+    "attributes": {
+      "puid": {
+        "type": "string"
+      },
+      "user_id": {
+        "type": "integer"
+      },
+      "package_id": {
+        "type": "integer"
+      },
+      "billing_type": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "decimal"
+      },
+      "status": {
+        "type": "string"
+      },
+      "expire_on": {
+        "type": "date"
+      },
+      "payment_method": {
+        "type": "string"
+      },
+      "proof": {
+        "type": "string"
+      },
+      "tax": {
+        "type": "integer"
+      }
+    }
+  }
+
+  

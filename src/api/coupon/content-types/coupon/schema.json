@@ -1,0 +1,48 @@
+{
+    "collectionName": "coupons",
+    "info": {
+      "singularName": "coupon",
+      "pluralName": "coupons",
+      "displayName": "Coupon",
+      "description": ""
+    },
+    "options": {
+      "draftAndPublish": false
+    },
+    "attributes": {
+      "user_id": {
+        "type": "integer"
+      },
+      "business_id": {
+        "type": "biginteger"
+      },
+      "service_id": {
+        "type": "integer"
+      },
+      "code": {
+        "type": "string"
+      },
+      "discount": {
+        "type": "decimal"
+      },
+      "start_date": {
+        "type": "date"
+      },
+      "end_date": {
+        "type": "date"
+      },
+      "once_per_customer": {
+        "type": "boolean"
+      },
+      "usages_limit": {
+        "type": "integer"
+      },
+      "used": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "boolean"
+      }
+    }
+  }
+  

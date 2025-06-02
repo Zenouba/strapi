@@ -1,0 +1,21 @@
+{
+    "kind": "collectionType",
+    "collectionName": "working_times",
+    "info": {
+      "singularName": "working-time",
+      "pluralName": "working-times",
+      "displayName": "Working Time"
+    },
+    "options": {
+      "draftAndPublish": false
+    },
+    "attributes": {
+      "user_id": { "type": "integer" },
+      "business_id": { "type": "biginteger" },
+      "day_id": { "type": "integer" },
+      "time": { "type": "string" },
+      "start": { "type": "string" },
+      "end": { "type": "string" }
+    }
+  }
+  

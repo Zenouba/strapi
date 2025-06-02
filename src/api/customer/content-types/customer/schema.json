@@ -1,0 +1,28 @@
+{
+    "collectionName": "customers",
+    "info": {
+      "singularName": "customer",
+      "pluralName": "customers",
+      "displayName": "Customer"
+    },
+    "options": {
+      "draftAndPublish": false,
+      "timestamps": false
+    },
+    "attributes": {
+        "user_id": { "type": "biginteger", "required": true },
+        "business_id": { "type": "biginteger", "required": true },
+        "name": { "type": "string", "required": true },
+        "slug": { "type": "uid", "targetField": "name" },
+        "phone": { "type": "string" },
+        "email": { "type": "email" },
+        "password": { "type": "password" },
+        "role": { "type": "string" },
+        "gender": { "type": "string" },
+        "last_appointment": { "type": "datetime" },
+        "status": { "type": "integer" },
+        "image": { "type": "string" },
+        "thumb": { "type": "string" }
+      }      
+  }
+  

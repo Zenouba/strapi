@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appointment",
+  "info": {
+    "singularName": "appointment",
+    "pluralName": "appointments",
+    "displayName": "Appointment"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "number": { "type": "string" },
+    "user_id": { "type": "integer" },
+    "business_id": { "type": "biginteger" },
+    "customer_id": { "type": "integer" },
+    "staff_id": { "type": "integer" },
+    "service_id": { "type": "integer" },
+    "location_id": { "type": "integer" },
+    "sub_location_id": { "type": "integer" },
+    "date": { "type": "date" },
+    "time": { "type": "string" },
+    "note": { "type": "text" },
+    "group_booking": { "type": "boolean" },
+    "total_person": { "type": "integer" },
+    "status": { "type": "integer" },
+    "pay_info": { "type": "string" },
+    "sync_calendar": { "type": "boolean" },
+    "sync_calendar_staff": { "type": "boolean" },
+    "sync_calendar_user": { "type": "boolean" },
+    "doc_id": { "type": "integer" },
+    "client_id": { "type": "integer" },
+    "locale": { "type": "string" }
+    
+  }
+}
+
+

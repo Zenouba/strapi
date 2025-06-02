@@ -1,0 +1,101 @@
+{
+    "kind": "singleType",
+    "collectionName": "setting",
+    "info": {
+      "singularName": "setting",
+      "pluralName": "settings",
+      "displayName": "Settings",
+      "description": "Paramètres généraux du site"
+    },
+    "options": {
+      "draftAndPublish": false
+    },
+    "attributes": {
+      "site_name": {
+        "type": "string",
+        "required": true
+      },
+      "site_title": {
+        "type": "string"
+      },
+      "favicon": {
+        "type": "media",
+        "multiple": false,
+        "allowedTypes": ["images"]
+      },
+      "logo": {
+        "type": "media",
+        "multiple": false,
+        "allowedTypes": ["images"]
+      },
+      "hero_img": {
+        "type": "media",
+        "multiple": false,
+        "allowedTypes": ["images"]
+      },
+      "keywords": {
+        "type": "string"
+      },
+      "description": {
+        "type": "text"
+      },
+      "footer_about": {
+        "type": "text"
+      },
+      "admin_email": {
+        "type": "email"
+      },
+      "mobile": {
+        "type": "string"
+      },
+      "copyright": {
+        "type": "string"
+      },
+      "pagination_limit": {
+        "type": "integer",
+        "default": 10
+      },
+      "facebook": {
+        "type": "string"
+      },
+      "instagram": {
+        "type": "string"
+      },
+      "twitter": {
+        "type": "string"
+      },
+      "linkedin": {
+        "type": "string"
+      },
+      "google_analytics": {
+        "type": "string"
+      },
+      "site_color": {
+        "type": "string"
+      },
+      "site_font": {
+        "type": "string"
+      },
+      "layout": {
+        "type": "string"
+      },
+      "about_info": {
+        "type": "text"
+      },
+      "ind_code": {
+        "type": "string"
+      },
+      "purchase_code": {
+        "type": "string"
+      },
+      "link": {
+        "type": "string"
+      },
+      "enable_captcha": {
+        "type": "boolean",
+        "default": false
+      }
+      
+    }
+  }
+  

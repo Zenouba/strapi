@@ -614,7 +614,10 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    user_id: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     zoom_link: Schema.Attribute.String;
   };
 }
@@ -670,77 +673,6 @@ export interface ApiSettingSetting extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-  };
-}
-
-export interface ApiUserUser extends Struct.CollectionTypeSchema {
-  collectionName: 'users';
-  info: {
-    displayName: 'User';
-    pluralName: 'users';
-    singularName: 'user';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    about_me: Schema.Attribute.Text;
-    account_type: Schema.Attribute.String;
-    address: Schema.Attribute.Text;
-    available_days: Schema.Attribute.String;
-    balance: Schema.Attribute.Float;
-    country: Schema.Attribute.String;
-    created_at: Schema.Attribute.DateTime;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    currency: Schema.Attribute.String;
-    date_format: Schema.Attribute.String;
-    email: Schema.Attribute.Email;
-    email_verified: Schema.Attribute.Boolean;
-    enable_appointment: Schema.Attribute.Boolean;
-    enable_rating: Schema.Attribute.Boolean;
-    enable_sms_alert: Schema.Attribute.Boolean;
-    enable_sms_notify: Schema.Attribute.Boolean;
-    google_analytics: Schema.Attribute.String;
-    image: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::user.user'> &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    parent_id: Schema.Attribute.Integer;
-    password: Schema.Attribute.Password;
-    paypal_email: Schema.Attribute.Email;
-    paypal_mode: Schema.Attribute.String;
-    paypal_payment: Schema.Attribute.Boolean;
-    paystack_payment: Schema.Attribute.Boolean;
-    paystack_public_key: Schema.Attribute.String;
-    paystack_secret_key: Schema.Attribute.String;
-    phone: Schema.Attribute.String;
-    phone_verified: Schema.Attribute.Boolean;
-    publish_key: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    razorpay_key_id: Schema.Attribute.String;
-    razorpay_key_secret: Schema.Attribute.String;
-    razorpay_payment: Schema.Attribute.Boolean;
-    role: Schema.Attribute.String;
-    secret_key: Schema.Attribute.String;
-    slug: Schema.Attribute.String;
-    sms_count: Schema.Attribute.Integer;
-    status: Schema.Attribute.Integer;
-    stripe_payment: Schema.Attribute.Boolean;
-    thumb: Schema.Attribute.String;
-    total_sales: Schema.Attribute.Float;
-    trial_expire: Schema.Attribute.Date;
-    twillo_account_sid: Schema.Attribute.String;
-    twillo_auth_token: Schema.Attribute.String;
-    twillo_number: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    user_name: Schema.Attribute.String;
-    user_type: Schema.Attribute.String;
-    verify_code: Schema.Attribute.String;
   };
 }
 
@@ -1326,7 +1258,6 @@ declare module '@strapi/strapi' {
       'api::payment.payment': ApiPaymentPayment;
       'api::service.service': ApiServiceService;
       'api::setting.setting': ApiSettingSetting;
-      'api::user.user': ApiUserUser;
       'api::working-day.working-day': ApiWorkingDayWorkingDay;
       'api::working-time.working-time': ApiWorkingTimeWorkingTime;
       'plugin::content-releases.release': PluginContentReleasesRelease;

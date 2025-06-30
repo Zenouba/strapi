@@ -1,33 +1,38 @@
 {
-    "collectionName": "services",
-    "info": {
-      "singularName": "service",
-      "pluralName": "services",
-      "displayName": "Service"
-    },
-    "options": {
-      "draftAndPublish": false
-    },
-    "attributes": {
-      "business_id": { "type": "biginteger", "required": true },
-      "category_id": { "type": "biginteger", "required": true },
-      "user_id": { "type": "biginteger", "required": true },
-      "name": { "type": "string", "required": true },
-      "slug": { "type": "uid", "targetField": "name" },
-      "extract": { "type": "text" },
-      "details": { "type": "richtext" },
-      "capacity": { "type": "integer" },
-      "capacity_left": { "type": "integer" },
-      "duration": { "type": "integer" },
-      "duration_type": { "type": "string" },
-      "price": { "type": "decimal" },
-      "staffs": { "type": "json" },
-      "status": { "type": "integer" },
-      "orders": { "type": "integer" },
-      "zoom_link": { "type": "string" },
-      "google_meet": { "type": "string" },
-      "image": { "type": "string" },
-      "thumb": { "type": "string" }
-    }
-  }
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "business_id": { "type": "biginteger", "required": true },
+    "category_id": { "type": "biginteger", "required": true },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+      
+    },    
   
+    "name": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "name" },
+    "extract": { "type": "text" },
+    "details": { "type": "richtext" },
+    "capacity": { "type": "integer" },
+    "capacity_left": { "type": "integer" },
+    "duration": { "type": "integer" },
+    "duration_type": { "type": "string" },
+    "price": { "type": "decimal" },
+    "staffs": { "type": "json" },
+    "status": { "type": "integer" },
+    "orders": { "type": "integer" },
+    "zoom_link": { "type": "string" },
+    "google_meet": { "type": "string" },
+    "image": { "type": "string" },
+    "thumb": { "type": "string" }
+  }
+}
